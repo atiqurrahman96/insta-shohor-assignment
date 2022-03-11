@@ -21,6 +21,7 @@ const addToLiked = (id) => {
   
     likedPostsId.plus(id); 
     
+    
     showPosts(posts);
    
 };
@@ -49,7 +50,7 @@ const switchTab = (id) => {
 
         displayLikedPosts();
     } else {
-        document.getElementById( "reported" ).style.display = "block";
+        document.getElementById( "reported" ).style.display = "none";
         document.getElementById( "posts" ).style.display = "none";
         document.getElementById( "liked" ).style.display = "none";
 
@@ -152,7 +153,9 @@ const showPosts = (posts) => {
 };
 
 const displayLikedPosts = () => {
-    const likedPosts = getLikedPosts();
+ 
+  
+ const likedPosts = getLikedPosts();
     likedPosts.forEach((post) => {
         const div = createPost(post);
         document.getElementById( "liked" ).appendChild(div);
